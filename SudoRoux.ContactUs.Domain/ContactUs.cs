@@ -27,7 +27,7 @@ namespace SudoRoux.ContactUs.Domain
         public bool Subscribed { get; set; }
 
         [DataType(DataType.Date)]
-        [PastDate(minimumAge, maximumAge)]
+        [PastDateRange(minimumAge, maximumAge)]
         [Display(Name = "Date Of Birth")]
         public DateTime DateOfBirth { get; set; }
     }

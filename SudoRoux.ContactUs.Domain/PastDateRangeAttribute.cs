@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SudoRoux.ContactUs.Domain
 {
-    class PastDateAttribute : RangeAttribute
+    class PastDateRangeAttribute : RangeAttribute
     {
-        public PastDateAttribute(int minimumPastYears, int maximumPastYears)
+        public PastDateRangeAttribute(int minimumPastYears, int maximumPastYears)
                : base(typeof(DateTime),  DateTime.Now.AddYears(-maximumPastYears).ToString(), DateTime.Now.AddYears(-minimumPastYears).ToString()) 
         { }
     }
