@@ -8,6 +8,7 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
+        <!--TODO: Action URL should be moved to the appsetting.json-->
         <form method="post" action="http://localhost:54158/ContactUs">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -45,8 +46,9 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
+    
     <script>
+        //This method override to make jquery validator work with  [PastDateRange(minimumAge, maximumAge)] attribute on DateofBirth property
         $.validator.methods.range = function (value, element, param) {
             debugger;
             if (element.id == 'DateOfBirth') {
